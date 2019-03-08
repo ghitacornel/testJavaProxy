@@ -4,9 +4,9 @@ import model.ServiceInterface;
 
 import java.lang.reflect.InvocationHandler;
 
-final public class ProxyProvider {
+final public class ProxyFactory {
 
-    private ProxyProvider() {
+    private ProxyFactory() {
         // just a helper class
     }
 
@@ -17,7 +17,7 @@ final public class ProxyProvider {
         ClassLoader classLoader = targetObject.getClass().getClassLoader();
 
         // specify proxy targeted interfaces
-        // proxy targeted interfaces can contain but  is not mandatory to contain also the targetObject implemented interfaces
+        // proxy targeted interfaces must contain all interfaces the proxy can be cast to
         Class<?>[] interfaces = new Class[]{ServiceInterface.class};
 
         // build an invocation handler used for all methods invoked on proxy

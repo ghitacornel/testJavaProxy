@@ -5,10 +5,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * This {@link InvocationHandler} will log to console the execution of any
- * method on the targetObject.<br>
- * It acts as a proxy for the original object but is in fact only a handler, the
- * actual proxy is created via {@link Proxy} class
+ * This {@link InvocationHandler} will log to console the execution of any method on the targetObject<br>
+ * It is only a handler, the actual proxy is created via {@link Proxy}
  *
  * @author Cornel
  */

@@ -4,10 +4,7 @@ import model.ServiceInterface;
 import model.ServiceImplementation;
 import org.junit.Assert;
 import org.junit.Test;
-import proxy.InvocationHandlerThatAddsLogging;
-import proxy.ProxyProvider;
-
-import java.lang.reflect.InvocationHandler;
+import proxy.ProxyFactory;
 
 public class TestProxy {
 
@@ -21,9 +18,9 @@ public class TestProxy {
         Assert.assertEquals(originalObject.toString() + " executed", originalObject.execute());
 
         // create the proxy
-        ServiceInterface proxyObject = ProxyProvider.createProxy(originalObject);
+        ServiceInterface proxyObject = ProxyFactory.createProxy(originalObject);
 
-        // verify the proxy
+        // verify the proxy is created
         Assert.assertNotNull(proxyObject);
 
         // verify the proxy behaviour
