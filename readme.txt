@@ -14,3 +14,4 @@ remote invocation
 aspects
 ....
 
+A proxy can be created via java lang proxy, via class extension, via code generation

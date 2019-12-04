@@ -31,6 +31,7 @@ public class CustomInvocationHandler implements InvocationHandler {
             System.out.println(this + " proxy executed before method " + method.getName());
 
             // invoke method on original object
+            // SMELLS like REFLECTION
             result = method.invoke(targetObject, args);
 
         } catch (Exception e) {
