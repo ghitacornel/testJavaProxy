@@ -9,17 +9,15 @@ import java.lang.reflect.Proxy;
  * method on the targetObject.<br>
  * It acts as a proxy for the original object but is in fact only a handler, the
  * actual proxy is created via {@link Proxy} class
- *
- * @author Cornel
  */
-public class InvocationHandlerThatAddsLogging implements InvocationHandler {
+public class CustomInvocationHandler implements InvocationHandler {
 
     final private Object targetObject;
 
     /**
      * @param targetObject the object for which the Proxy is created
      */
-    InvocationHandlerThatAddsLogging(Object targetObject) {
+    CustomInvocationHandler(Object targetObject) {
         this.targetObject = targetObject;
     }
 
@@ -47,7 +45,13 @@ public class InvocationHandlerThatAddsLogging implements InvocationHandler {
 
         }
 
+        // return an altered result
+        // observe again to correlation between
+        // what the handler returns
+        // what the targeted method returns
+        // or what the proxy "implemented" interfaces enforce
         return result + " through proxy";
+
     }
 
 }
