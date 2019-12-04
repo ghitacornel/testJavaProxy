@@ -4,11 +4,7 @@ import model.ServiceInterface;
 
 import java.lang.reflect.InvocationHandler;
 
-final public class ProxyProvider {
-
-    private ProxyProvider() {
-        // just a helper class
-    }
+public class ProxyFactory {
 
     public static ServiceInterface createProxy(Object targetObject) {
 
