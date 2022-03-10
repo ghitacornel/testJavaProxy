@@ -10,8 +10,8 @@ public class ProxyFactory {
      * Create a proxy over an actual targeted object<br>
      * Observe there is no correlation enforced between the Proxy class and targeted object actual class
      *
-     * @param targetObject
-     * @return
+     * @param targetObject the target object
+     * @return a proxy over the target object
      */
     public static ServiceInterface createProxy(Object targetObject) {
 

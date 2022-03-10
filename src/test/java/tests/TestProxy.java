@@ -9,13 +9,13 @@ import proxy.ProxyFactory;
 public class TestProxy {
 
     // create the object that will be accessed through a Proxy
-    private ServiceInterface originalObject = new ServiceImplementation();
+    private final ServiceInterface originalObject = new ServiceImplementation();
 
     @Test
     public void testProxy() {
 
         // access original object directly
-        Assert.assertEquals(originalObject.toString() + " executed", originalObject.execute());
+        Assert.assertEquals(originalObject + " executed", originalObject.execute());
 
         // create the proxy
         ServiceInterface proxyObject = ProxyFactory.createProxy(originalObject);
