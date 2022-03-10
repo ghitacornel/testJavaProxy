@@ -1,7 +1,7 @@
 package tests;
 
-import model.ServiceInterface;
 import model.ServiceImplementation;
+import model.ServiceInterface;
 import org.junit.Assert;
 import org.junit.Test;
 import proxy.ProxyFactory;

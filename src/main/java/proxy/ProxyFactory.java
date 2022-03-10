@@ -4,12 +4,15 @@ import model.ServiceInterface;
 
 import java.lang.reflect.InvocationHandler;
 
-final public class ProxyFactory {
+public class ProxyFactory {
 
-    private ProxyFactory() {
-        // just a helper class
-    }
-
+    /**
+     * Create a proxy over an actual targeted object<br>
+     * Observe there is no correlation enforced between the Proxy class and targeted object actual class
+     *
+     * @param targetObject
+     * @return
+     */
     public static ServiceInterface createProxy(Object targetObject) {
 
         // obtain the class loader
@@ -21,7 +24,7 @@ final public class ProxyFactory {
         Class<?>[] interfaces = new Class[]{ServiceInterface.class};
 
         // build an invocation handler used for all methods invoked on proxy
-        InvocationHandler handler = new InvocationHandlerThatAddsLogging(targetObject);
+        InvocationHandler handler = new CustomInvocationHandler(targetObject);
 
         // build the proxy
         return (ServiceInterface) java.lang.reflect.Proxy.newProxyInstance(classLoader, interfaces, handler);
