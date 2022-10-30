@@ -27,7 +27,9 @@ public class ProxyFactory {
         InvocationHandler handler = new CustomInvocationHandler(targetObject);
 
         // build the proxy
-        return (ServiceInterface) java.lang.reflect.Proxy.newProxyInstance(classLoader, interfaces, handler);
+        return (ServiceInterface)
+                java.lang.reflect.Proxy.
+                        newProxyInstance(classLoader, interfaces, handler);
 
     }
 
